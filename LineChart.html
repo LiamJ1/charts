@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Line plot and scatter plot</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+
+<canvas id="mychart" style ='max-width: 400px; max-height: 400px;'></canvas>
+<script>
+    var ctx = document.getElementById('mychart');
+    var mychart = new Chart(ctx,{
+        type:'line',
+        data:{
+            labels:['January','February','March','April','May','June','July','August','September','October','November','December'],
+            datasets:[{
+                data:[34,71,13,45,86,71,23,67,23,23,72,54],
+                label: 'Candy',
+                borderColor: 'rgb(133,106,75)'
+            },
+                {
+                    data:[100,21,113,0],
+                    label:'Clothes',
+                    borderColor:'rgb(132,165,50)'
+                },
+                {
+                    data:[4,7,8,11,8,10,32,38,35,90,32,18,],
+                    label:'Amazon',
+                    borderColor: 'rgba(100,200,100,1)'
+                },
+                {
+                    data:[76,60,15,98,12,45,37,22,75,11,0,14],
+                    label:'Movies',
+                    borderColor: 'rgb(26,66,33)'
+                }]
+        },
+        options:{
+            plugins:{
+                title:{
+                    display:true,
+                    text:'Monthly Spending'
+                },
+                legend:{
+                    position: 'left'
+                }
+            }
+        }
+    });
+</script>
+<canvas id="chart2" style="max-width:400px; max-height:400px;"></canvas>
+<script>
+    var cty = document.getElementById('chart2')
+    var nextChart = new Chart(cty,{
+        type:'scatter',
+        data:{
+            datasets:[{
+                label:'Dataset1',
+                backgroundColor:'rgba(225,200,50,1',
+                pointBackgroundColor:'rgba(225,200,50,1)',
+                pointRadius: 4,
+                data:[
+                    {x:7,y:10},
+                    {x:11,y:25},
+                    {x:15,y:15},
+                    {x:17,y:16},
+                    {x:20,y:20},
+                    {x:23,y:12},
+                    {x:25,y:18},
+                    {x:27,y:20},
+                ]
+            },
+                {
+                    label:'Dataset2',
+                    backgroundColor:'rgb(244,121,0)',
+                    pointBackgroundColor:'rgb(244,121,0)',
+                    pointRadius: 4,
+                    data:[
+                        {x:1,y:10},
+                        {x:7,y:13},
+                        {x:15,y:16},
+                        {x:16,y:20},
+                        {x:17,y:21},
+                        {x:19,y:12},
+                        {x:25,y:20},
+                        {x:30,y:27}
+                    ]
+                },
+                {
+                    label:'Dataset3',
+                    backgroundColor:'rgb(57,186,27)',
+                    pointBackgroundColor:'rgb(57,186,27)',
+                    pointRadius: 4,
+                    data:[
+                        {x:4,y:10},
+                        {x:7,y:12},
+                        {x:14,y:8},
+                        {x:20,y:21},
+                        {x:23,y:16},
+                        {x:25,y:12},
+                        {x:30,y:22},
+                        {x:33,y:27},
+                        {x:35,y:22},
+                        {x:37,y:20}
+                    ]
+                },
+                {
+                    label:'Dataset4',
+                    backgroundColor:'rgb(52,98,168)',
+                    pointBackgroundColor:'rgb(52,98,168)',
+                    pointRadius: 4,
+                    data:[
+                        {x:53,y:7},
+                        {x:42,y:11},
+                        {x:24,y:20},
+                        {x:70,y:3},
+                        {x:43,y:76},
+                        {x:32,y:34},
+                        {x:60,y:10},
+                        {x:33,y:26},
+                        {x:25,y:67},
+                        {x:87,y:45}
+                    ]
+                }
+            ]
+        },
+        options:{
+            scales:{
+                xAxis:{
+                    beginAtZero: true
+                },
+                yAxis:{
+                    beginAtZero: true
+                }
+            },
+            plugins:{
+                title:{
+                    display:true,
+                    text:'Sales'
+                }
+            }
+        },
+    });
+</script>
+</body>
+</html>
