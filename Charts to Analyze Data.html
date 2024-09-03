@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>US Covid Data</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+<h1>US Covid Data</h1>
+
+<!-- Line Chart for Monthly COVID-19 Cases in the US -->
+<canvas id="mychart" style='max-width: 400px; max-height: 400px;'></canvas>
+<script>
+  var ctx = document.getElementById('mychart');
+  var mychart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+      datasets: [{
+        data: [30000, 28000, 35000, 32000, 45000, 50000, 55000, 60000, 62000, 70000, 68000, 75000],
+        label: 'COVID-19 Cases',
+        borderColor: 'rgb(255,99,132)',
+        fill: false
+      }]
+    },
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: 'Monthly COVID-19 Cases in the US'
+        },
+        legend: {
+          position: 'left'
+        }
+      }
+    }
+  });
+</script>
+
+<!-- Scatter Chart for COVID-19 Cases vs. Recoveries in the US -->
+<canvas id="chart2" style="max-width:400px; max-height:400px;"></canvas>
+<script>
+  var cty = document.getElementById('chart2');
+  var nextChart = new Chart(cty, {
+    type: 'scatter',
+    data: {
+      datasets: [{
+        label: 'COVID-19 Cases',
+        backgroundColor: 'rgba(255,99,132,0.5)',
+        borderColor: 'rgba(255,99,132,1)',
+        pointBackgroundColor: 'rgba(255,99,132,1)',
+        pointRadius: 4,
+        data: [
+          { x: 1, y: 30000 },
+          { x: 2, y: 28000 },
+          { x: 3, y: 35000 },
+          { x: 4, y: 32000 },
+          { x: 5, y: 45000 },
+          { x: 6, y: 50000 },
+          { x: 7, y: 55000 },
+          { x: 8, y: 60000 }
+        ]
+      },
+        {
+          label: 'Recoveries',
+          backgroundColor: 'rgba(75,192,192,0.5)',
+          borderColor: 'rgba(75,192,192,1)',
+          pointBackgroundColor: 'rgba(75,192,192,1)',
+          pointRadius: 4,
+          data: [
+            { x: 1, y: 20000 },
+            { x: 2, y: 22000 },
+            { x: 3, y: 25000 },
+            { x: 4, y: 24000 },
+            { x: 5, y: 30000 },
+            { x: 6, y: 35000 },
+            { x: 7, y: 40000 },
+            { x: 8, y: 45000 }
+          ]
+        }]
+    },
+    options: {
+      scales: {
+        x: {
+          beginAtZero: true
+        },
+        y: {
+          beginAtZero: true
+        }
+      },
+      plugins: {
+        title: {
+          display: true,
+          text: 'COVID-19 Cases vs. Recoveries in the US'
+        }
+      }
+    }
+  });
+</script>
+
+<!-- Doughnut Chart for COVID-19 Cases by Region in the US -->
+<canvas id="chart3" style="max-width:400px; max-height:400px;"></canvas>
+<script>
+  var ctx = document.getElementById('chart3');
+  var mychart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Northeast', 'Midwest', 'South', 'West'],
+      datasets: [{
+        label: 'COVID-19 Cases by Region',
+        data: [1200000, 1500000, 2500000, 1700000],
+        backgroundColor: [
+          'rgba(255,99,132,0.6)',
+          'rgba(54,162,235,0.6)',
+          'rgba(255,206,86,0.6)',
+          'rgba(75,192,192,0.6)'
+        ],
+        hoverOffset: 4
+      }]
+    }
+  });
+</script>
+
+<!-- Pie Chart for Vaccination Rates by Age Group in the US -->
+<div style="width:400px;">
+  <canvas id="myChart2"></canvas>
+</div>
+<script>
+  var cty = document.getElementById('myChart2');
+  var mychart = new Chart(cty, {
+    type: 'pie',
+    data: {
+      labels: ['0-18', '19-34', '35-49', '50-64', '65+'],
+      datasets: [{
+        label: 'Vaccination Rates by Age Group',
+        data: [80, 85, 90, 88, 75],
+        backgroundColor: [
+          'rgba(255,99,132,0.6)',
+          'rgba(54,162,235,0.6)',
+          'rgba(255,206,86,0.6)',
+          'rgba(75,192,192,0.6)',
+          'rgba(153,102,255,0.6)'
+        ],
+        hoverOffset: 4
+      }]
+    }
+  });
+</script>
+
+<!-- Polar Area Chart for COVID-19 Cases by Symptoms in the US -->
+<div style="width:400px;">
+  <canvas id="myChart3"></canvas>
+</div>
+<script>
+  var ctz = document.getElementById('myChart3');
+  var mychart = new Chart(ctz, {
+    type: 'polarArea',
+    data: {
+      labels: ['Fever', 'Cough', 'Shortness of Breath', 'Fatigue', 'Headache', 'Loss of Taste'],
+      datasets: [{
+        label: 'COVID-19 Cases by Symptoms',
+        data: [7000, 5000, 4500, 4000, 3500, 3000],
+        backgroundColor: [
+          'rgba(255,99,132,0.6)',
+          'rgba(54,162,235,0.6)',
+          'rgba(255,206,86,0.6)',
+          'rgba(75,192,192,0.6)',
+          'rgba(153,102,255,0.6)',
+          'rgba(255,159,64,0.6)'
+        ]
+      }]
+    }
+  });
+</script>
+
+</body>
+</html>

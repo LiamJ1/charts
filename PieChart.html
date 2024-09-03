@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pie Chart</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+<div style="width:400px;">
+  <canvas id="myChart"></canvas>
+</div>
+<script>
+  var ctx = document.getElementById('myChart');
+  var mychart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Maple Bar','Chocolate Sprinkles','Choclate Bar','Regular Maple','Jelly-Filled','Blueberry old-fashioned'],
+      datasets: [{
+        label: 'My First Donut Today',
+        data: [300, 50, 200,25,250,30],
+        backgroundColor: [
+          'rgba(72,182,151,0.85)',
+          'rgb(191,117,117)',
+          'rgb(33,31,78)',
+          'rgb(66,155,213)',
+          'rgb(197,80,80)',
+          'rgb(243,182,126)'
+        ],
+        hoverOffset: 1
+      }]
+    }
+
+  });
+</script>
+<div style="width:400px;">
+  <canvas id="myChart2"></canvas>
+</div>
+<script>
+  var cty = document.getElementById('myChart2');
+  var mychart = new Chart(cty, {
+    type: 'pie',
+    data: {
+      labels: ['Milk', 'Lemonade', 'Apple Juice','Orange Juice','Water','Grape Juice'],
+      datasets: [{
+        label: 'My First Drink Today',
+        data: [300, 50, 200,450,600,100],
+        backgroundColor: [
+          'rgba(46,122,177,0.69)',
+          'rgb(113,80,63)',
+          'rgb(128,17,47)',
+          'rgb(75,188,37)',
+          'rgb(119,112,223)',
+          'rgb(80,52,92)'
+        ],
+        hoverOffset: 1
+      }]
+    }
+
+  });
+
+</script>
+<div style="width:400px;">
+  <canvas id="myChart3"></canvas>
+</div>
+<script>
+  var ctz = document.getElementById('myChart3');
+  var mychart = new Chart(ctz, {
+    type: 'polarArea',
+    data:{
+      labels:['hello','hi','hey','wassup',"how are you doing?","good morning"],
+      datasets:[{
+        label:'Idk What else to Use',
+        data:[142,123,2434,2344,3420,1323],
+        backgroundColor:[
+          'rgba(90,156,103,0.4)',
+          'rgba(32,186,64,0.68)',
+          'rgb(27,72,83)',
+          'rgb(236,255,112)',
+          'rgb(50,85,47)',
+          'rgb(186,150,55)',
+        ]
+      }]
+    }
+  });
+
+</script>
+</body>
+</html>
